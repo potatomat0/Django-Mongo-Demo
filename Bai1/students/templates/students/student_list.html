@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách học sinh</title>
+</head>
+<body>
+<h3>Danh sách học sinh</h3>
+{% for student in students %}
+    <p>{{ forloop.counter }}. {{ student.ho_ten }} - {{ student.ngay_sinh }} - {{ student.lop }} - {{ student.diem_trung_binh }}
+        (<a href="{% url 'students:student_update' student.id %}">Update</a> |
+        <a href="{% url 'students:student_delete' student.id %}">Delete</a>)
+    </p>
+{% endfor %}
+
+<p> <a href="{% url 'students:student_create' %}"> + Tạo học sinh mới</a></p>
+</body>
+</html>

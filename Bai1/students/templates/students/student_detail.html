@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student Detail</title>
+</head>
+<body>
+<p> tên học sinh: {{ student.ho_ten }} | <a href="{% url 'students:student_update' student.id %}">Cập nhật</a> |
+    <a href="{% url 'students:student_delete' student.id %}">Delete</a>
+</p>
+<p> điểm học sinh: {{ student.diem_trung_binh }} </p>
+<p> ngày sinh: {{ student.ngay_sinh}} </p>
+<p> lớp: {{student.lop}} </p>
+<p> <a href="{% url 'students:student_list' %}">Xem tất cả học sinh</a> |
+    <a href="{% url 'students:student_create'%}">Học sinh mới</a>
+</p>
+</body>
+</html>

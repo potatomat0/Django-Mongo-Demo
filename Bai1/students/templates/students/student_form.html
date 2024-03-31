@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if object %}Chỉnh thông tin học sinh {% else %} Tạo học sinh mới {% endif %}</title>
+</head>
+<body>
+    <h3>{% if object %} Chỉnh thông tin học sinh {% else %} Tạo học sinh mới {% endif %}</h3>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="ho_ten">Họ tên:</label>
+            <input type="text" class="form-control" id="ho_ten" name="ho_ten" required>
+        </div>
+        <div class="form-group">
+            <label for="ngay_sinh">Ngày sinh:</label>
+            <input type="date" class="form-control" id="ngay_sinh" name="ngay_sinh" required>
+        </div>
+        <div class="form-group">
+            <label for="lop">Lớp:</label>
+            <input type="text" class="form-control" id="lop" name="lop" required>
+        </div>
+        <div class="form-group">
+            <label for="diem_trung_binh">Điểm trung bình:</label>
+            <input type="number" step="0.01" class="form-control" id="diem_trung_binh" name="diem_trung_binh" required>
+        </div>
+        <p><input type="submit" class="btn btn-success" value="Submit"></p>
+    </form>
+</body>
+</html>
